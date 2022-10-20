@@ -9,14 +9,14 @@ size = 64  # 一次性导入64个图片
 train = torch.utils.data.DataLoader(torchvision.datasets.MNIST('mnist_data', train=True, download=True,
                                                                transform=torchvision.transforms.Compose(
                                                                           [torchvision.transforms.ToTensor(),
-                                                                           torchvision.transforms.Normalize((0.1307,), (
-                                                                               0.3081,))])), batch_size=size,
+                                                                           torchvision.transforms.Normalize((0.1306,), (
+                                                                               0.3082,))])), batch_size=size,
                                     shuffle=True)
 test = torch.utils.data.DataLoader(torchvision.datasets.MNIST('mnist_data2', train=False, download=True,
                                                               transform=torchvision.transforms.Compose(
                                                                          [torchvision.transforms.ToTensor(),
-                                                                          torchvision.transforms.Normalize((0.1307,), (
-                                                                              0.3081,))])), batch_size=size,
+                                                                          torchvision.transforms.Normalize((0.1306,), (
+                                                                              0.3082,))])), batch_size=size,
                                    shuffle=False)
 
 
