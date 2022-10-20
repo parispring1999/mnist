@@ -5,7 +5,7 @@ from torch import optim
 import torchvision
 from plot import xian, tu, chuli
 
-size = 512  # 一次性导入512个图片
+size = 64  # 一次性导入64个图片
 train = torch.utils.data.DataLoader(torchvision.datasets.MNIST('mnist_data', train=True, download=True,
                                                                transform=torchvision.transforms.Compose(
                                                                           [torchvision.transforms.ToTensor(),
@@ -47,7 +47,7 @@ trainloss = []
 
 for each in range(5):
     for x_id, (x, y) in enumerate(train):
-        # x:[b,1,28,28] y:[512] [b,784]->[b,10]
+        # x:[b,1,28,28] y:[64] [b,784]->[b,10]
         x = x.view(x.size(0), 784)
         loss = fun.mse_loss(w(x), chuli(y))  # 计算误差，输出值和真实值的误差
         optimizer.zero_grad()  # 得到梯度
