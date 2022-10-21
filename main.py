@@ -45,7 +45,7 @@ w = Wang()
 optimizer = optim.SGD(w.parameters(), lr=0.01, momentum=0.9)
 trainloss = []
 
-for each in range(5):
+for each in range(2):
     for x_id, (x, y) in enumerate(train):
         # x:[b,1,28,28] y:[64] [b,784]->[b,10]
         x = x.view(x.size(0), 784)
@@ -55,7 +55,7 @@ for each in range(5):
         optimizer.step()  # 不断训练得到最佳的w和b
 
         trainloss.append(loss.item())
-        if x_id % 10 == 0:
+        if x_id % 50 == 0:
             print(each, x_id, loss.item())
 
 xian(trainloss)
