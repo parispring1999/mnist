@@ -10,8 +10,8 @@ def xian(data):
 
 
 def tu(img, label, name):
-    for i in range(6):
-        p.subplot(2, 3, i + 1)
+    for i in range(9):
+        p.subplot(3, 3, i + 1)
         p.tight_layout()
         p.imshow(img[i][0] * 0.3081 + 0.1307, cmap='gray_r', interpolation='none')
         p.title("{}:{}".format(name, label[i].item()))
